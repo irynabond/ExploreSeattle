@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  background-color: rgb(238, 238, 238);
+  font-family: 'Roboto', sans-serif;
+}
+
+input[type="submit"], input[type="submit"]:hover, 
+input[type="submit"]:active,
+input[type="submit"]:focus, input[type="submit"]:visited {
+    background-color: transparent;  
+    border: 1px solid rgb(238,238,238);
+    line-height: 38px;
+    padding: 0 30px;
+    outline: 0;
+}
+
+#background {
+    background-image: url('http://images.nationalgeographic.com/wpf/media-live/photos/000/239/custom/23939_1600x1200-wallpaper-cb1282059611.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+ .title {
+  font-weight: 300;
+  color: #F5FFFA;
+  padding-top: 70px;
+  text-align: center;
+  font-size: 38px;
+}
+
+.date-pick-title{
+  font-weight: 300;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 38px;
+}
+
+.date-pick-input{
+  top-margin: 20px;
+  text-align: center;
+  margin: auto;
+  width: 50%;
+}
