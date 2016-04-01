@@ -1,6 +1,7 @@
-function callApi() {
+function callApi(text) {
+  console.log(text)
   $.ajax({
-    url: "http://api.eventful.com/json/events/search?l=Seattle&app_key=C5VJScp667pVNMHB&&date=today",
+    url: "http://api.eventful.com/json/events/search?l=Seattle&date=today&keywords="+ text + "&app_key=C5VJScp667pVNMHB",
     type: "get",
     dataType: "jsonp",
     success: function(result) { 
@@ -30,14 +31,15 @@ function callApi() {
 
 
 function showEventfulData(obj) {
-    $('.events').append('<div>' +
+    $('ul').append('<li>' +
           '<div class = "content">' +
             '<p id = "title">' + obj.name + '</p>' +
             '<p class = "details">Date and time: </p>' + 
             '<p class = "data-details">' +  obj.fullDate + " " + obj.time + '</p>' + 
             '<p class = "details"> Address: </p>' +
-            '<p class = "data-details">' + obj.address + '</p>' +
+            '<p class = "data-details">' + obj.address + ", " + obj.city + '</p>' +
             '<p class ="link"> Open on <a href=' + obj.url+ '>' + obj.company_name + '</a></p>' +
           '</div>'+
-    '</div>');
+    '</li>');
  }
+

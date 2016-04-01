@@ -1,4 +1,6 @@
  $('#show-events').on('click', function(){
-     callApi();
+ 	var text = $('#searching').val();
+ 	
+     callApi(text);
    });
  
