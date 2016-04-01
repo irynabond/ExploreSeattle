@@ -8,6 +8,10 @@
     <link rel="stylesheet" type="text/css" href="libs/foundation.css"></link>
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href = "style.css">
+
+    <link rel="stylesheet" type="text/css" href="libs/GridGallery/css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="libs/GridGallery/css/component.css" />
+    <script src="libs/GridGallery/js/modernizr.custom.js"></script>
   </head>
 
   <body>
@@ -21,26 +25,26 @@
       </div>
     </div>
     <button id="show-events" class="large alert round button">Show me events</button> 
-
-
-
-      <!-- <div class="date-form">
-        <h2 class="title">When would you like to do it?</h2>
-        <form class="date-pick-input">
-          <input type="date" name='date' id="test">
-        </form>
-      </div> -->
     </div>
 
+    <div class="container">
+      <div id="grid-gallery" class="grid-gallery">
+      </div><!-- // grid-gallery -->
+    </div>
 
-   
-      <ul class="large-block-grid-5 medium-block-grid-3 small-block-grid-1"></ul>
-   
+<!--     <ul class="large-block-grid-5 medium-block-grid-3 small-block-grid-1"></ul>
+ -->   
     <script type = "text/javascript" src = "jquery-2.1.1.js"></script>
     <script type = "text/javascript" src = "recommend-function.js"></script>
     <script type="text/javascript" src = "script.js"></script>
     <script type = "text/javascript" src = "api-call.js"></script>
     <script type="text/javascript" src = "libs/moment.js"></script>
+
+    <script src = "appendGrid.js"></script>
+    <script src="libs/GridGallery/js/imagesloaded.pkgd.min.js"></script>
+    <script src="libs/GridGallery/js/masonry.pkgd.min.js"></script>
+    <script src="libs/GridGallery/js/classie.js"></script>
+    <script src="libs/GridGallery/js/cbpGridGallery.js"></script>
 
 
   </body>
