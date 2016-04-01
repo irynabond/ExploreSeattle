@@ -1,11 +1,10 @@
 function callApi() {
   $.ajax({
-    url: "http://api.eventful.com/json/events/search?l=Seattle&app_key=C5VJScp667pVNMHB&keywords=story+time+evening+music&date=Today",
+    url: "http://api.eventful.com/json/events/search?l=Seattle&app_key=C5VJScp667pVNMHB&&date=today",
     type: "get",
     dataType: "jsonp",
     success: function(result) { 
        var eventData = result.events.event;
-       console.log(eventData);
        for(var i = 0; i < eventData.length; i++){
           var obj = {};
            var dateTime = moment(eventData[i].start_time);
@@ -13,7 +12,11 @@ function callApi() {
            obj['time'] = dateTime.format('hh:mm a');
            obj['name'] = eventData[i].title;
            obj['description']= eventData[i].description;
-           obj['address']= eventData[i].venue_address;
+           if (eventData[i].venue_address!==null) {
+            obj['address']= eventData[i].venue_address;
+           } else {
+             obj['address']= "Please, check a link below";
+           }
            obj['url']= eventData[i]["url"];
            obj['city']= eventData[i].city_name;
            obj['state']= eventData[i].region_abbr;
@@ -25,8 +28,16 @@ function callApi() {
   })
 }
 
-function showEventfulData(obj) {
-    $('#events').append(obj.name);
- }
 
-  
+function showEventfulData(obj) {
+    $('.events').append('<div>' +
+          '<div class = "content">' +
+            '<p id = "title">' + obj.name + '</p>' +
+            '<p class = "details">Date and time: </p>' + 
+            '<p class = "data-details">' +  obj.fullDate + " " + obj.time + '</p>' + 
+            '<p class = "details"> Address: </p>' +
+            '<p class = "data-details">' + obj.address + '</p>' +
+            '<p class ="link"> Open on <a href=' + obj.url+ '>' + obj.company_name + '</a></p>' +
+          '</div>'+
+    '</div>');
+ }
