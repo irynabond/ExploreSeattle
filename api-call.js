@@ -45,7 +45,7 @@ function callApi(text) {
            obj['city']= "Seattle";
            obj['state']= "WA";
            obj['company_name']= "Eventbrite";
-           console.log(obj);
+           //appendGrid(obj);
            showEventfulData(obj);
         }       
       } 
@@ -53,7 +53,7 @@ function callApi(text) {
 }
 
 function showEventfulData(obj) {
-    $('ul').append('<li>' +
+    $('#events').append(
           '<div class = "content">' +
             '<p id = "title">' + obj.name + '</p>' +
             '<p class = "details">Date and time: </p>' + 
@@ -61,7 +61,7 @@ function showEventfulData(obj) {
             '<p class = "details"> Address: </p>' +
             '<p class = "data-details">' + obj.address + ", " + obj.city + '</p>' +
             '<p class ="link"> Open on <a href=' + obj.url+ '>' + obj.company_name + '</a></p>' +
-          '</div>'+
-    '</li>');
+          '</div>'
+    );
  }
 
