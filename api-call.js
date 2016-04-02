@@ -49,6 +49,32 @@ function callApi(text) {
         }       
       } 
   })
+
+
+   $.ajax({
+    url: "https://api.meetup.com/2/open_events.json?zip=98109&topic="+ text + "&before=1d&key=595675274d4211175b522771323d075",
+    type: "get",
+    dataType: "jsonp",
+    success: function(result) { 
+       var eventData = result.results;
+       for(var i = 0; i < eventData.length; i++){
+        if(eventData[i].venue != undefined){
+          var obj = {};
+          var dateTime = moment(eventData[i].time);
+          obj['fullDate'] = dateTime.format('YYYY-MM-DD');
+          obj['time'] = dateTime.format('hh:mm a');
+          obj['name'] = eventData[i].name;
+          obj['description']= eventData[i].description;
+          obj['address']= eventData[i].venue['address_1'],
+          obj['url']= eventData[i]["event_url"],
+          obj['city']= eventData[i].venue.city,
+          obj['state']= eventData[i].venue.state,
+          obj['company_name']= "Meetup";
+          showEventfulData(obj);
+        }
+        }       
+      } 
+  })
 }
 
 function showEventfulData(obj) {
