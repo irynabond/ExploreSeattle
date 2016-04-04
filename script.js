@@ -1,5 +1,20 @@
   var fixed = false;
 
+  $(document).scroll(function() {
+	var top = $('#background').outerHeight();
+    if( $(this).scrollTop() > top) {
+        if( !fixed ) {
+            fixed = true;
+            $('#narrow').show();
+        }
+    } else {
+      if( fixed ) {
+          fixed = false;
+          $('#narrow').css({display:'none'});
+      }
+    }
+})
+
  $('#show-events-btn').on('click', function(){
  	$("#narrow").hide();
  	$("#loading").show();
@@ -13,30 +28,14 @@
  		$('html, body').animate({
    		 scrollTop: $(".events-content").offset().top
 			}, 1000);
- 	 }, 2500);
+ 	}, 2500);
    
- });
- 
+});
+
  function scroll () {
  	 $('html, body').animate({
    		 scrollTop: $("#background").offset().top
 			}, 1000);
- 	 $("#narrow").hide();
-
  }
  
 
-$(document).scroll(function() {
-	var top = $('#background').outerHeight();
-    if( $(this).scrollTop() > top) {
-        if( !fixed ) {
-            fixed = true;
-            $('#narrow').show();
-        }
-    } else {
-        if( fixed ) {
-            fixed = false;
-            $('#narrow').css({display:'none'});
-        }
-    }
-})
