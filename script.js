@@ -1,4 +1,7 @@
+  var fixed = false;
+
  $('#show-events-btn').on('click', function(){
+ 	$("#narrow").hide();
  	$("#loading").show();
  	var text = $('#searching').val();
  	$("#header").empty();
@@ -14,3 +17,26 @@
    
  });
  
+ function scroll () {
+ 	 $('html, body').animate({
+   		 scrollTop: $("#background").offset().top
+			}, 1000);
+ 	 $("#narrow").hide();
+
+ }
+ 
+
+$(document).scroll(function() {
+	var top = $('#background').outerHeight();
+    if( $(this).scrollTop() > top) {
+        if( !fixed ) {
+            fixed = true;
+            $('#narrow').show();
+        }
+    } else {
+        if( fixed ) {
+            fixed = false;
+            $('#narrow').css({display:'none'});
+        }
+    }
+})

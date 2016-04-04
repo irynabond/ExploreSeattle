@@ -85,7 +85,7 @@ html {
 }
 
 .events-content {
-	width: 100%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   max-width: initial;
@@ -126,3 +126,15 @@ p {
 .row:before, .row.after{
 	display: none;
 }
+
+#narrow {
+	width:60px;
+	display: none;
+	transform: rotate(-90deg);
+	cursor: pointer;
+	z-index: 10; 
+	position: fixed; 
+	right: 22px; 
+	top: 270px;
+}
+
