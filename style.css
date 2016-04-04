@@ -55,7 +55,15 @@ html {
 	font-weight: 300;
 }
 
-
+#header {
+	text-align: center;
+	margin: 17px 0 17px 0;
+}
+.event-header {
+	font-family: 'Lato', sans-serif;
+	font-weight: 300;
+	font-size: 2rem;
+}
 
 [class*="block-grid-"].text-center > li {
   
