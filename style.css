@@ -40,7 +40,7 @@ html {
     font-size: 30px;
     box-shadow: none;
 }
-    
+
 #show-events-btn {
 	position: absolute;
 	bottom: 0;
@@ -74,7 +74,7 @@ html {
 }
 
 [class*="block-grid-"].text-center > li {
-  
+
   margin: 0.25rem;
   float: none;
   display: inline-block;

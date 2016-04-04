@@ -54,6 +54,7 @@ function callApi(text) {
               obj['zip']= "";
            }
            obj['url']= eventData[i]['event_url'];
+           console.log(obj['url']);
            obj['company_name']= "Meetup";
            showEventfulData(obj);
         }
@@ -95,7 +96,7 @@ function showEventfulData(obj) {
             '<p class = "data-details">' +  obj.fullDate + " " + obj.time + '</p>' +
             '<p class = "details"> Address: </p>' +
             '<p class = "data-details">' + obj.address + ", " + obj.city + '</p>' +
-            '<p class ="link"> Open on <a href=' + obj.url+ '>' + obj.company_name + '</a></p>' +
+            '<p class ="link"> Open on <a href=' + url+ '>' + company + '</a></p>' +
           '</div>' +
         '</li>');
  }

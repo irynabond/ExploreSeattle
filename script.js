@@ -11,6 +11,6 @@
    		 scrollTop: $(".events-content").offset().top
 			}, 1000);
  	 }, 2500);
-   
+
  });
- 
+
