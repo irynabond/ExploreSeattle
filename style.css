@@ -65,6 +65,14 @@ html {
 	font-size: 2rem;
 }
 
+#loading {
+	display: none;
+	position: absolute;
+	bottom:0;
+	margin-bottom: 4%;
+	margin-left: 44%;
+}
+
 [class*="block-grid-"].text-center > li {
   
   margin: 0.25rem;
