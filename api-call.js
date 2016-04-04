@@ -59,6 +59,29 @@ function callApi(text) {
         }
       }
   });
+
+   $.ajax({
+    url: "https://www.eventbriteapi.com/v3/events/search/?location.address=Seattle&start_date.keyword=today&q="+text+"&token=MO5AQ24HAYLNBP7L5WLE",
+    type: "get",
+    success: function(result) {
+       var eventData = result.events;
+       console.log(eventData);
+       for(var i = 0; i < eventData.length; i++){
+          var obj = {};
+           var dateTime = moment(eventData[i].start.local);
+           obj['fullDate'] = dateTime.format('YYYY-MM-DD');
+           obj['time'] = dateTime.format('hh:mm a');
+           obj['name'] = eventData[i].name.text;
+           obj['description']= eventData[i].description.text;
+           obj['address']= "Please, check a link below";
+           obj['url']= eventData[i].url;
+           obj['city']= "Seattle";
+           obj['state']= "WA";
+           obj['company_name']= "Eventbrite";
+           showEventfulData(obj);
+        }
+      }
+  });
 }
 
 function showEventfulData(obj) {
@@ -72,7 +95,7 @@ function showEventfulData(obj) {
             '<p class = "data-details">' +  obj.fullDate + " " + obj.time + '</p>' +
             '<p class = "details"> Address: </p>' +
             '<p class = "data-details">' + obj.address + ", " + obj.city + '</p>' +
-            '<p class ="link"><a href=' + url + ">" + company + '</a>'  +'</p>' +
-          '</div>'+
-    '</li>');
+            '<p class ="link"> Open on <a href=' + obj.url+ '>' + obj.company_name + '</a></p>' +
+          '</div>' +
+        '</li>');
  }
