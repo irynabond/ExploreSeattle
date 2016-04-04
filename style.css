@@ -122,3 +122,7 @@ p {
   color: #999999;
   padding-top: 5px;
 }
+
+.row:before, .row.after{
+	display: none;
+}
