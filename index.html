@@ -6,28 +6,30 @@
     <title>Explore Seattle</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto:500' rel='stylesheet' type='text/css'>
     <link rel = "stylesheet" href = "reset.css">
-     <link rel='stylesheet prefetch' href='http://cdn.foundation5.zurb.com/foundation.css'>
+    <link rel='stylesheet prefetch' href='http://cdn.foundation5.zurb.com/foundation.css'>
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
-   
-
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
     <link rel="stylesheet" href = "style.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,100' rel='stylesheet' type='text/css'>
+
   </head>
 
   <body>
     <div id = "background">
-     <span class = "title">What would you like to do today?</span>
-    <div class = "row">
-        <div class = "large-9 columns">
+    
+    <div class = "row main-content">
+        <div class = "large-12 columns text-center">
+           <span id = "main-title">What would you like to do today?</span>
           <form class="search-zip">
-            <input id = "searching" type="text" name="text" placeholder="Music, arts, sport, family events, or nightlife">
+            <input id = "searching" type="text" name="text" autofocus>
          </form>
       </div>
     </div>
-    <button id="show-events" class="large alert button">Show me events</button> 
+    <button id="show-events-btn" class="pure-button">Show me events</button> 
     </div>
 
     <div class = "row">
-      <ul class='large-block-grid-4 medium-block-grid-4 small-block-grid-1 text-center'></ul>
+      <ul class='large-block-grid-4 medium-block-grid-4 small-block-grid-1'></ul>
     </div>
 
     <script type = "text/javascript" src = "jquery-2.1.1.js"></script>

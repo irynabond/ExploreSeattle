@@ -51,7 +51,7 @@ function callApi(text) {
   })
 
 
-   $.ajax({
+/*   $.ajax({
     url: "https://api.meetup.com/2/open_events.json?zip=98109&topic="+ text + "&before=1d&key=595675274d4211175b522771323d075",
     type: "get",
     dataType: "jsonp",
@@ -74,7 +74,7 @@ function callApi(text) {
         }
         }       
       } 
-  })
+  })*/
 }
 
 function showEventfulData(obj) {
