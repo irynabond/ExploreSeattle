@@ -9,6 +9,8 @@
         }
     } else {
       if( fixed ) {
+          $('#searching').val("");
+          $("#searching").focus();
           fixed = false;
           $('#narrow').css({display:'none'});
       }
@@ -37,8 +39,8 @@
  	 $('html, body').animate({
    		 scrollTop: $("#background").offset().top
 	  }, 1000);
-   $('#searching').val("");
-   $("#searching").focus();
+  /* $('#searching').val("");
+   $("#searching").focus();*/
  }
  
 
