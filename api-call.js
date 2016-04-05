@@ -85,7 +85,6 @@ function callApi(text) {
 function showEventfulData(obj) {
   var url = '"'+obj.url+'"';
   var company = obj.company_name;
-   
     $('ul').append('<li>' +
       '<div class = "content">' +
         '<p id = "title">' + obj.name + '</p>' +
