@@ -5,16 +5,16 @@ html {
 }
 
 #background {
-    background-image: url('lake.jpg');
+    background-image: url('seattle1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
 }
 
 #main-title {
-	font-size: 3.2rem;
+	font-size: 3.4rem;
 	font-family: 'Lato', sans-serif;
-	font-weight: 300;
+	font-weight: 100;
 	color: white;
 }
 
@@ -40,12 +40,11 @@ html {
     font-size: 30px;
     box-shadow: none;
 }
-    
+
+.btn-container {
+	margin-top: 40px;
+}
 #show-events-btn {
-	position: absolute;
-	bottom: 0;
-	margin-left: 40%;
-	margin-bottom: 15%;
 	background-color: transparent;
 	color: white;
 	border-radius: 4px;
@@ -53,7 +52,15 @@ html {
 	font-size: 140%;
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
+	box-shadow: none;
 }
+
+#show-events-btn:hover {
+	border: 2px solid white;
+}
+.pure-button:hover, .pure-button:focus {
+   background-image: none;
+  }
 
 #header {
 	text-align: center;
@@ -67,10 +74,7 @@ html {
 
 #loading {
 	display: none;
-	position: absolute;
-	bottom:0;
-	margin-bottom: 4%;
-	margin-left: 44%;
+	margin-top: 30px;
 }
 
 [class*="block-grid-"].text-center > li {
@@ -89,7 +93,7 @@ html {
 }
 
 .events-content {
-	width: 100%;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   max-width: initial;
@@ -126,3 +130,19 @@ p {
   color: #999999;
   padding-top: 5px;
 }
+
+.row:before, .row.after{
+	display: none;
+}
+
+#narrow {
+	width:60px;
+	display: none;
+	transform: rotate(-90deg);
+	cursor: pointer;
+	z-index: 10; 
+	position: fixed; 
+	right: 22px; 
+	top: 270px;
+}
+
