@@ -4,8 +4,8 @@ function callApi(text) {
     type: "get",
     dataType: "jsonp",
     success: function(result) {
-      console.log(result.events);
        var eventData = result.events.event;
+       console.log(eventData);
        for(var i = 0; i < eventData.length; i++){
           var obj = {};
            var dateTime = moment(eventData[i].start_time);
@@ -65,7 +65,7 @@ function callApi(text) {
     type: "get",
     success: function(result) {
        var eventData = result.events;
-       console.log(eventData);
+       console.log(eventData.length);
        for(var i = 0; i < eventData.length; i++){
           var obj = {};
            var dateTime = moment(eventData[i].start.local);
@@ -87,15 +87,18 @@ function callApi(text) {
 function showEventfulData(obj) {
   var url = '"'+obj.url+'"';
   var company = obj.company_name;
-
+   
     $('ul').append('<li>' +
           '<div class = "content">' +
+            
             '<p id = "title">' + obj.name + '</p>' +
             '<p class = "details">Date and time: </p>' +
             '<p class = "data-details">' +  obj.fullDate + " " + obj.time + '</p>' +
             '<p class = "details"> Address: </p>' +
             '<p class = "data-details">' + obj.address + ", " + obj.city + '</p>' +
             '<p class ="link"> Open on <a href=' + obj.url+ '>' + obj.company_name + '</a></p>' +
+           
           '</div>' +
         '</li>');
  }
+

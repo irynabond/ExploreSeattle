@@ -17,7 +17,7 @@
     }
 })
 
- $('#show-events-btn').on('click', function(){
+ function clickButton (event){
  	$("#narrow").hide();
  	$("#loading").show();
  	var text = $('#searching').val();
@@ -30,17 +30,20 @@
  		$('html, body').animate({
    		 scrollTop: $(".events-content").offset().top
 			}, 1000);
- 	}, 2500);
-   
-});
+ 	}, 2500);  
+}
 
  function scroll () {
  	 
  	 $('html, body').animate({
    		 scrollTop: $("#background").offset().top
 	  }, 1000);
-  /* $('#searching').val("");
-   $("#searching").focus();*/
+  
  }
- 
 
+
+$(".search-zip").submit(function() {
+    clickButton($("#searching").get(0));
+    return false;
+});
+ 
