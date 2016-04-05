@@ -4,7 +4,6 @@ function callApi(text) {
     type: "get",
     dataType: "jsonp",
     success: function(result) {
-      console.log(result.events);
        var eventData = result.events.event;
        for(var i = 0; i < eventData.length; i++){
           var obj = {};
@@ -34,7 +33,6 @@ function callApi(text) {
     dataType: "jsonp",
     success: function(result) {
        var eventData = result.results;
-       console.log(eventData);
        for(var i = 0; i < eventData.length; i++){
           var obj = {};
            var dateTime = moment(eventData[i].time);
@@ -54,7 +52,6 @@ function callApi(text) {
               obj['zip']= "";
            }
            obj['url']= eventData[i]['event_url'];
-           console.log(obj['url']);
            obj['company_name']= "Meetup";
            showEventfulData(obj);
         }
@@ -66,7 +63,6 @@ function callApi(text) {
     type: "get",
     success: function(result) {
        var eventData = result.events;
-       console.log(eventData);
        for(var i = 0; i < eventData.length; i++){
           var obj = {};
            var dateTime = moment(eventData[i].start.local);

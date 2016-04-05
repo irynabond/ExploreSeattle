@@ -4,14 +4,13 @@
  	$("#header").empty();
  	$('ul').empty();
  	callApi(text);
- 	setTimeout(function(){
-    $('#header').append('<span class = "event-header">Here you go! Check out these events in Seattle. </span>');
-    $("#loading").hide();
- 		$('html, body').animate({
-   		 scrollTop: $(".events-content").offset().top
-			}, 1000);
- 	 }, 2500);
-
+  setTimeout(function(){
+  $('#header').append('<span class = "event-header">Here you go! Check out these events in Seattle. </span>');
+  $("#loading").hide();
+	$('html, body').animate({
+		 scrollTop: $(".events-content").offset().top
+  	}, 1000);
+    }, 2500);
  });
 
 function searchKeyPress(e)
