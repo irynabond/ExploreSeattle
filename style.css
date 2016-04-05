@@ -52,7 +52,15 @@ html {
 	font-size: 140%;
 	font-family: 'Lato', sans-serif;
 	font-weight: 300;
+	box-shadow: none;
 }
+
+#show-events-btn:hover {
+	border: 2px solid white;
+}
+.pure-button:hover, .pure-button:focus {
+   background-image: none;
+  }
 
 #header {
 	text-align: center;
