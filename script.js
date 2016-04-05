@@ -1,4 +1,24 @@
+  var fixed = false;
+
+  $(document).scroll(function() {
+	var top = $('#background').outerHeight();
+    if( $(this).scrollTop() > top) {
+        if( !fixed ) {
+            fixed = true;
+            $('#narrow').show();
+        }
+    } else {
+      if( fixed ) {
+          $('#searching').val("");
+          $("#searching").focus();
+          fixed = false;
+          $('#narrow').css({display:'none'});
+      }
+    }
+})
+
  $('#show-events-btn').on('click', function(){
+ 	$("#narrow").hide();
  	$("#loading").show();
  	var text = $('#searching').val();
  	$("#header").empty();
@@ -24,3 +44,13 @@ function searchKeyPress(e)
     }
     return true;
 }
+
+ function scroll () {
+
+ 	 $('html, body').animate({
+   		 scrollTop: $("#background").offset().top
+	  }, 1000);
+  /* $('#searching').val("");
+   $("#searching").focus();*/
+ }
+
