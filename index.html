@@ -23,7 +23,7 @@
         <div class = "large-12 columns text-center">
            <span id = "main-title">What would you like to do today?</span>
           <form autocomplete="off" class="search-zip">
-            <input id = "searching" type="text" name="text" autofocus>
+            <input id = "searching" type="text" name="text" onkeypress="return searchKeyPress(event);" autofocus>
          </form>
       </div>
     </div>
