@@ -33,9 +33,12 @@
 });
 
  function scroll () {
+ 	 
  	 $('html, body').animate({
    		 scrollTop: $("#background").offset().top
-			}, 1000);
+	  }, 1000);
+   $('#searching').val("");
+   $("#searching").focus();
  }
  
 
