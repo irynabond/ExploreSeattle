@@ -19,10 +19,26 @@
 
 
 
-$(document).on("click", "#window", function(e) {
-  bootbox.alert("Hello world!", function() {
-      console.log("Alert Callback");
-  });
+$(document).on("click", "#wind", function(e) {
+  var tile = $(e.target).closest('.content');
+  var title = tile.find('#title');
+
+  var descr = tile.data(title.text()).event;
+  
+  bootbox.dialog({
+                title: title.text(),
+                message: '<p>' +descr + '</p>',
+                buttons: {
+                    success: {
+                        label: "Close",
+                        className: "btn-success",
+                        callback: function () {
+                           console.log("ok")
+                        }
+                    }
+                }
+            }
+        );
 });
 
 

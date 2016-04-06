@@ -146,6 +146,6 @@ p {
 	top: 270px;
 }
 
-.content .popup {
-  text-decoration: none;
+.content .modal-desc {
+  display: none;
 }
