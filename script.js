@@ -17,7 +17,17 @@
     }
 })
 
+
+
+$(document).on("click", "#window", function(e) {
+  bootbox.alert("Hello world!", function() {
+      console.log("Alert Callback");
+  });
+});
+
+
  function clickButton (event){
+
  	$("#narrow").hide();
  	$("#loading").show();
  	var text = $('#searching').val();
