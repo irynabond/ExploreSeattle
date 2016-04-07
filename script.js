@@ -92,7 +92,7 @@ function noEventsFoundPopup () {
   $("#searching").focus();
   bootbox.dialog({
     title: '<p class = "popup-title"><strong>No events found!</strong></p>',
-    message: '<p class = "popup-desc">Sorry, there are no events which meet your request. Try another keywords. For example: "dancing", "hiking", "music", "art", "learning". Hope you\'ll enjoy the experience.</p>',
+    message: '<p class = "popup-desc">Sorry, there are no events which meet your request. Try another keywords. For example: "dancing", "hiking", "music", "art", "learning". Thank you.</p>',
     buttons: {
     success: {
     label: "OK",
@@ -112,7 +112,7 @@ function eventsFound () {
       $('html, body').animate({
          scrollTop: $(".events-content").offset().top
         }, 1000);
-    }, 2000);  
+    }, 500);  
 }
 
 
