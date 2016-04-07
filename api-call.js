@@ -17,7 +17,7 @@ function callApi(text, defArr) {
          }
          eventData = result.events.event;
          for(var i = 0; i < eventData.length; i++){
-            res = true;
+            res = res.concat(eventData);
             var obj = {};
              var dateTime = moment(eventData[i].start_time);
              obj['fullDate'] = dateTime.format('YYYY-MM-DD');
@@ -58,7 +58,7 @@ function callApi(text, defArr) {
          }
          eventData = result.results;
          for(var i = 0; i < eventData.length; i++){
-            res = true;
+            res = res.concat(eventData);
             var obj = {};
              var dateTime = moment(eventData[i].time);
              obj['fullDate'] = dateTime.format('YYYY-MM-DD');
@@ -97,7 +97,7 @@ function callApi(text, defArr) {
       success: function(result) {
          var eventData = result.events;
          for(var i = 0; i < eventData.length; i++){
-            res = true;
+            res = res.concat(eventData);
             var obj = {};
              var dateTime = moment(eventData[i].start.local);
              obj['fullDate'] = dateTime.format('YYYY-MM-DD');

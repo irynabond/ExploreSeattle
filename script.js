@@ -1,7 +1,7 @@
   var fixed = false;
-  var res = false;
+  var res;
   $(document).scroll(function() {
-	var top = $('#background').outerHeight();
+  var top = $('#background').outerHeight();
     if( $(this).scrollTop() > top) {
         if( !fixed ) {
             fixed = true;
@@ -68,6 +68,7 @@ function ifInputEmptyPopup () {
 }
 
 function sendRequestAPI() {
+  res = [];
   var defArr = [];
   $("#loading").show();
     var text = $('#searching').val();
@@ -75,10 +76,10 @@ function sendRequestAPI() {
     $('ul').empty();
     callApi(text, defArr);
     $.when.apply(this, defArr).done(function() {
-    if (res===false) {
+    if (res.length===0) {
        noEventsFoundPopup();
     } else {
-      if (res===true) {
+      if (res.length!==0) {
         eventsFound();
       }
     }
@@ -127,8 +128,8 @@ function searchKeyPress(e) {
 }
 
  function scroll () {
- 	 $('html, body').animate({
-   		 scrollTop: $("#background").offset().top
-	  }, 1000); 
+   $('html, body').animate({
+       scrollTop: $("#background").offset().top
+    }, 1000); 
  }
 
