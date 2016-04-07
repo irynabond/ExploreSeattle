@@ -87,18 +87,14 @@ function showEventfulData(obj) {
   var name = obj.name;
     $('ul').append('<li>' +
       '<div class = "content">' +
-        '<div id = "wind">' +
-          '<p id = "title">' + obj.name + '</p>' +
+          '<p class = "title">' + obj.name + '</p>' +
           '<p class = "details">Date and time: </p>' +
           '<p class = "data-details">' +  obj.fullDate + " " + obj.time + '</p>' +
           '<p class = "details"> Address: </p>' +
           '<p class = "data-details">' + obj.address + ", " + obj.city + '</p>' +
           '<p class ="link"> Open on <a href=' + url+ '>' + company + '</a></p>' +
         '</div>' +
-      '</div>' +
     '</li>');
   var div = $('.content').data(obj.name, {event: obj.description });
  
-//console.log(div.data(obj.name).bar); // gives "foobar"​​​​​​​​​​​​​​
-
 }

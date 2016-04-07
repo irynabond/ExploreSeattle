@@ -20,16 +20,16 @@
 
 
 $(document).on("click", ".content", function(e) {
-  var tile = $(e.target).closest('.content');
-  var title = tile.find('#title');
+  var target = $(e.target).closest('.content');
+  var title = target.find('.title');
 
-  var descr = tile.data(title.text()).event;
+  var descr = target.data(title.text()).event;
   if (descr===null) {
     descr = "Sorry, there is no description for this event provided. To learn more, follow the event link and contact to organizer. Thank you.";
   }
   bootbox.dialog({
-                title: title.text(),
-                message: '<p>' +descr + '</p>',
+                title: '<p class = "popup-title"><bold>' + title.text() + '</bold></p>',
+                message: '<p class = "popup-desc">' +descr + '</p>',
                 buttons: {
                     success: {
                         label: "Close",
