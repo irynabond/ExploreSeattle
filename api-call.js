@@ -98,7 +98,6 @@ function showEventfulData(obj) {
       '</div>' +
     '</li>');
   var div = $('.content').data(obj.name, {event: obj.description });
-  console.log(div);
  
 //console.log(div.data(obj.name).bar); // gives "foobar"​​​​​​​​​​​​​​
 

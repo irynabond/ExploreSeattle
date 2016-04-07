@@ -19,12 +19,14 @@
 
 
 
-$(document).on("click", "#wind", function(e) {
+$(document).on("click", ".content", function(e) {
   var tile = $(e.target).closest('.content');
   var title = tile.find('#title');
 
   var descr = tile.data(title.text()).event;
-  
+  if (descr===null) {
+    descr = "Sorry, there is no description for this event provided. To learn more, follow the event link and contact to organizer. Thank you.";
+  }
   bootbox.dialog({
                 title: title.text(),
                 message: '<p>' +descr + '</p>',
