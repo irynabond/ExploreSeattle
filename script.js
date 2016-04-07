@@ -1,18 +1,18 @@
   var fixed = false;
-
+  var res = false;
   $(document).scroll(function() {
 	var top = $('#background').outerHeight();
     if( $(this).scrollTop() > top) {
         if( !fixed ) {
             fixed = true;
-            $('#narrow').show();
+            $('#arrow').show();
         }
     } else {
       if( fixed ) {
           $('#searching').val("");
           $("#searching").focus();
           fixed = false;
-          $('#narrow').css({display:'none'});
+          $('#arrow').css({display:'none'});
       }
     }
 })
@@ -24,7 +24,7 @@ $(document).on("click", ".content", function(e) {
   var title = target.find('.title');
 
   var descr = target.data(title.text()).event;
-  if (descr===null) {
+  if (descr===null||descr===undefined) {
     descr = "Sorry, there is no description for this event provided. To learn more, follow the event link and contact to organizer. Thank you.";
   }
   bootbox.dialog({
@@ -44,14 +44,35 @@ $(document).on("click", ".content", function(e) {
 
 
  function clickButton (event){
+  var defArr = [];
   if ($('#searching').val()!=="") {
-
-   	$("#narrow").hide();
+   	$("#arrow").hide();
    	$("#loading").show();
    	var text = $('#searching').val();
    	$("#header").empty();
    	$('ul').empty();
-   	callApi(text);
+   	callApi(text, defArr);
+    $.when.apply(this, defArr).done(function() {
+        if (res===false) {
+           bootbox.dialog({
+            title: '<p class = "popup-title"><strong>No events found!</strong></p>',
+            message: '<p class = "popup-desc">Sorry, there are no events which meet your request. Try another keywords. For example: "dancing", "hiking", "music", "art", "learning". Hope you\'ll enjoy the experience.</p>',
+            buttons: {
+            success: {
+            label: "OK",
+            className: "btn-success",
+            callback: function () {
+               console.log("ok")
+            }
+            }
+            }
+          });
+        } else {
+          if (res===true) {
+            console.log("all done")
+          }
+        }
+      }); 
 
    	setTimeout(function(){
       $('#header').append('<span class = "event-header">Here you go! Check out these events in Seattle. </span>');
@@ -65,13 +86,13 @@ $(document).on("click", ".content", function(e) {
         title: '<p class = "popup-title"><strong>Hello friend!</strong></p>',
         message: '<p class = "popup-desc">Use an input field to tell which type of event you\'d like to attend. For example: "dancing", "hiking", "music", "art", "learning". Hope you\'ll enjoy the experience.</p>',
         buttons: {
-            success: {
-                label: "OK",
-                className: "btn-success",
-                callback: function () {
-                   console.log("ok")
-                }
+          success: {
+            label: "OK",
+            className: "btn-success",
+            callback: function () {
+               console.log("ok")
             }
+          }
         }
     });
   }

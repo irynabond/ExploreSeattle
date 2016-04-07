@@ -135,7 +135,7 @@ p {
 	display: none;
 }
 
-#narrow {
+#arrow {
 	width:60px;
 	display: none;
 	transform: rotate(-90deg);
