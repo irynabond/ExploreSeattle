@@ -28,39 +28,53 @@ $(document).on("click", ".content", function(e) {
     descr = "Sorry, there is no description for this event provided. To learn more, follow the event link and contact to organizer. Thank you.";
   }
   bootbox.dialog({
-                title: '<p class = "popup-title"><bold>' + title.text() + '</bold></p>',
-                message: '<p class = "popup-desc">' +descr + '</p>',
-                buttons: {
-                    success: {
-                        label: "Close",
-                        className: "btn-success",
-                        callback: function () {
-                           console.log("ok")
-                        }
-                    }
-                }
-            }
-        );
+        title: '<p class = "popup-title"><strong>' + title.text() + '</strong></p>',
+        message: '<p class = "popup-desc">' +descr + '</p>',
+        buttons: {
+          success: {
+              label: "Close",
+              className: "btn-success",
+              callback: function () {
+                 console.log("ok")
+              }
+          }
+        }
+    });
 });
 
 
  function clickButton (event){
+  if ($('#searching').val()!=="") {
 
- 	$("#narrow").hide();
- 	$("#loading").show();
- 	var text = $('#searching').val();
- 	$("#header").empty();
- 	$('ul').empty();
- 	callApi(text);
+   	$("#narrow").hide();
+   	$("#loading").show();
+   	var text = $('#searching').val();
+   	$("#header").empty();
+   	$('ul').empty();
+   	callApi(text);
 
- 	setTimeout(function(){
-    $('#header').append('<span class = "event-header">Here you go! Check out these events in Seattle. </span>');
-    $("#loading").hide();
- 		$('html, body').animate({
-   		 scrollTop: $(".events-content").offset().top
-			}, 1000);
- 	}, 2500);  
-
+   	setTimeout(function(){
+      $('#header').append('<span class = "event-header">Here you go! Check out these events in Seattle. </span>');
+      $("#loading").hide();
+   		$('html, body').animate({
+     		 scrollTop: $(".events-content").offset().top
+  			}, 1000);
+   	}, 2500);  
+  } else {
+    bootbox.dialog({
+        title: '<p class = "popup-title"><strong>Hello friend!</strong></p>',
+        message: '<p class = "popup-desc">Use an input field to tell which type of event you\'d like to attend. For example: "dancing", "hiking", "music", "art", "learning". Hope you\'ll enjoy the experience.</p>',
+        buttons: {
+            success: {
+                label: "OK",
+                className: "btn-success",
+                callback: function () {
+                   console.log("ok")
+                }
+            }
+        }
+    });
+  }
 }
 
 function searchKeyPress(e) {
