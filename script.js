@@ -44,45 +44,15 @@ $(document).on("click", ".content", function(e) {
 
 
  function clickButton (event){
-  var defArr = [];
-  if ($('#searching').val()!=="") {
-   	$("#arrow").hide();
-   	$("#loading").show();
-   	var text = $('#searching').val();
-   	$("#header").empty();
-   	$('ul').empty();
-   	callApi(text, defArr);
-    $.when.apply(this, defArr).done(function() {
-        if (res===false) {
-           bootbox.dialog({
-            title: '<p class = "popup-title"><strong>No events found!</strong></p>',
-            message: '<p class = "popup-desc">Sorry, there are no events which meet your request. Try another keywords. For example: "dancing", "hiking", "music", "art", "learning". Hope you\'ll enjoy the experience.</p>',
-            buttons: {
-            success: {
-            label: "OK",
-            className: "btn-success",
-            callback: function () {
-               console.log("ok")
-            }
-            }
-            }
-          });
-        } else {
-          if (res===true) {
-            console.log("all done")
-          }
-        }
-      }); 
-
-   	setTimeout(function(){
-      $('#header').append('<span class = "event-header">Here you go! Check out these events in Seattle. </span>');
-      $("#loading").hide();
-   		$('html, body').animate({
-     		 scrollTop: $(".events-content").offset().top
-  			}, 1000);
-   	}, 2500);  
+  if ($('#searching').val()==="") {
+    ifInputEmptyPopup();
   } else {
-    bootbox.dialog({
+    sendRequestAPI();
+  }
+}
+
+function ifInputEmptyPopup () {
+  bootbox.dialog({
         title: '<p class = "popup-title"><strong>Hello friend!</strong></p>',
         message: '<p class = "popup-desc">Use an input field to tell which type of event you\'d like to attend. For example: "dancing", "hiking", "music", "art", "learning". Hope you\'ll enjoy the experience.</p>',
         buttons: {
@@ -95,8 +65,56 @@ $(document).on("click", ".content", function(e) {
           }
         }
     });
-  }
 }
+
+function sendRequestAPI() {
+  var defArr = [];
+  $("#loading").show();
+    var text = $('#searching').val();
+    $("#header").empty();
+    $('ul').empty();
+    callApi(text, defArr);
+    $.when.apply(this, defArr).done(function() {
+    if (res===false) {
+       noEventsFoundPopup();
+    } else {
+      if (res===true) {
+        eventsFound();
+      }
+    }
+  }); 
+}
+
+function noEventsFoundPopup () {
+  $("#loading").hide();
+  $('#searching').val("");
+  $("#searching").focus();
+  bootbox.dialog({
+    title: '<p class = "popup-title"><strong>No events found!</strong></p>',
+    message: '<p class = "popup-desc">Sorry, there are no events which meet your request. Try another keywords. For example: "dancing", "hiking", "music", "art", "learning". Hope you\'ll enjoy the experience.</p>',
+    buttons: {
+    success: {
+    label: "OK",
+    className: "btn-success",
+    callback: function () {
+       console.log("ok")
+      }
+    }
+    }
+  });
+}
+
+function eventsFound () {
+  setTimeout(function(){
+      $('#header').append('<span class = "event-header">Here you go! Check out these events in Seattle. </span>');
+      $("#loading").hide();
+      $('html, body').animate({
+         scrollTop: $(".events-content").offset().top
+        }, 1000);
+    }, 2000);  
+}
+
+
 
 function searchKeyPress(e) {
   // look for window.event in case event isn't passed in
