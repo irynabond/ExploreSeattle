@@ -128,7 +128,7 @@ function showEventfulData(obj) {
       '<div class = "content">' +
           '<p class = "title">' + obj.name + '</p>' +
           '<p class = "details">Date and time: </p>' +
-          '<p class = "data-details">' +  obj.fullDate + " " + obj.time + '</p>' +
+          '<p class = "data-details">' +  obj.fullDate + ", " + obj.time + '</p>' +
           '<p class = "details"> Address: </p>' +
           '<p class = "data-details">' + obj.address + ", " + obj.city + '</p>' +
           '<p class ="link"> Open on <a href=' + url+ '>' + company + '</a></p>' +
