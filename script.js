@@ -86,7 +86,7 @@ function sendRequestAPI() {
         eventsFound();
       }
     }
-  }); 
+  });
 }
 
 function noEventsFoundPopup () {
@@ -116,10 +116,8 @@ function eventsFound () {
       $('html, body').animate({
          scrollTop: $(".events-content").offset().top
         }, 1000);
-    }, 500);  
+    }, 500);
 }
-
-
 
 function searchKeyPress(e) {
   // look for window.event in case event isn't passed in
@@ -134,6 +132,5 @@ function searchKeyPress(e) {
  function scroll () {
    $('html, body').animate({
        scrollTop: $("#background").offset().top
-    }, 1000); 
+    }, 1000);
  }
-
