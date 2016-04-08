@@ -71,8 +71,8 @@ function callApi(text, defArr) {
               obj['state']= eventData[i].state;
               obj['zip']= eventData[i].zip;
              } else {
-               obj['address']= "Please, check a link below";
-                obj['city']= "Seattle";
+               obj['address']= "Seattle";
+                obj['city']= "Please, check a link below";
                 obj['state']= "";
                 obj['zip']= "";
              }
@@ -104,9 +104,9 @@ function callApi(text, defArr) {
              obj['time'] = dateTime.format('hh:mm a');
              obj['name'] = eventData[i].name.text;
              obj['description']= eventData[i].description.text;
-             obj['address']= "Please, check a link below";
+             obj['address']= "Seattle";
              obj['url']= eventData[i].url;
-             obj['city']= "Seattle";
+             obj['city']= "Please, check a link below";
              obj['state']= "WA";
              obj['company_name']= "Eventbrite";
              showEventfulData(obj);
