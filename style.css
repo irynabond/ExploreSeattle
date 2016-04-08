@@ -73,7 +73,7 @@ html {
 	padding-top: 20px;
 	width: 70%;
 	margin-left: 15%;
-    font-family: 'Lato', sans-serif;
+  font-family: 'Lato', sans-serif;
 	font-weight: 300;
 
 }
@@ -88,6 +88,9 @@ html {
     box-shadow: none;
 }
 
+.btn-container {
+	margin-top: 40px;
+}
 #show-events-btn {
 	background-color: transparent;
 	color: white;
@@ -122,7 +125,7 @@ html {
 }
 
 [class*="block-grid-"].text-center > li {
-
+  
   margin: 0.25rem;
   float: none;
   display: inline-block;
@@ -153,11 +156,12 @@ html {
   text-align: left;
   padding: 25px 7px 7px 7px;
 }
-.content #title, .details {
+.content .title, .details {
   color: #333333;
   word-break: break-word;
   width: 100%;
   line-height: 20px;
+  font-size: 16px;
 }
 p {
   margin:0;
@@ -166,7 +170,7 @@ p {
 .details {
   font-size: 16px;
   color: rgb(113, 113, 120);
-  padding-top: 10px;
+  padding-top: 8px;
 }
 .data-details {
   font-weight: 300;
@@ -175,18 +179,39 @@ p {
   padding-top: 5px;
 }
 
+li {
+  position: relative;
+}
+ .content .link {
+  font-size: 15px;
+  position: absolute;
+  bottom: 5px;
+  left:16px;
+}
+
 .row:before, .row.after{
 	display: none;
 }
 
-#narrow {
+#arrow {
 	width:60px;
 	display: none;
 	transform: rotate(-90deg);
 	cursor: pointer;
-	z-index: 10;
-	position: fixed;
-	right: 22px;
+	z-index: 10; 
+	position: fixed; 
+	right: 22px; 
 	top: 270px;
 }
 
+div .modal-header, .modal-body {
+  font-family: 'Varela Round', sans-serif;
+}
+
+#footer {
+  font-family: 'Varela Round', sans-serif;
+  font-size: 12px;
+  text-align: center;
+  color: rgb(113, 113, 120);
+  margin: 20px 0 20px 0;
+}
