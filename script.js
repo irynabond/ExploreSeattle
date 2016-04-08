@@ -111,7 +111,7 @@ function eventsFound () {
   setTimeout(function(){
       $('#header').append('<span class = "event-header">Here you go! Check out these events in Seattle. </span>');
       $("#loading").hide();
-      $('#footer').append('<span class="footer-container">© 2016, MIT LICENSE. All rights reserved.</span>');
+      $('#footer').append('<span>© 2016, MIT LICENSE. All rights reserved.</span>').addClass("footer-container");
       $('html, body').animate({
          scrollTop: $(".events-content").offset().top
         }, 1000);
