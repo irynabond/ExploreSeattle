@@ -19,7 +19,9 @@
 
 
 
+
 $(document).on("click", ".content", function(e) {
+
   var target = $(e.target).closest('.content');
   var title = target.find('.title');
 
@@ -109,6 +111,7 @@ function eventsFound () {
   setTimeout(function(){
       $('#header').append('<span class = "event-header">Here you go! Check out these events in Seattle. </span>');
       $("#loading").hide();
+      $('#footer').append('<span class="footer-container">© 2016, MIT LICENSE. All rights reserved.</span>');
       $('html, body').animate({
          scrollTop: $(".events-content").offset().top
         }, 1000);
