@@ -134,6 +134,6 @@ function showEventfulData(obj) {
           '<p class ="link"> Open on <a href=' + url+ '>' + company + '</a></p>' +
         '</div>' +
     '</li>');
-  var div = $('.content').data(obj.name, {event: obj.description });
+    $('.content').data(obj.name, {event: obj.description });
  
 }

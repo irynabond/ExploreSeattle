@@ -114,21 +114,32 @@ html {
   word-break: break-word;
   width: 100%;
   line-height: 20px;
+  font-size: 15px;
 }
 p {
   margin:0;
   padding: 0;
 }
 .details {
-  font-size: 16px;
+  font-size: 15px;
   color: rgb(113, 113, 120);
-  padding-top: 10px;
+  padding-top: 8px;
 }
 .data-details {
   font-weight: 300;
-  font-size: 14px;
+  font-size: 13px;
   color: #999999;
   padding-top: 5px;
+}
+
+li {
+  position: relative;
+}
+ .content .link {
+  font-size: 15px;
+  position: absolute;
+  bottom: 5px;
+  left:16px;
 }
 
 .row:before, .row.after{
