@@ -161,7 +161,7 @@ div .modal-header, .modal-body {
   font-family: 'Varela Round', sans-serif;
 }
 
-#footer {
+.footer-container {
   font-family: 'Varela Round', sans-serif;
   font-size: 12px;
   text-align: center;

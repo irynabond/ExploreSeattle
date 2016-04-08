@@ -76,6 +76,7 @@ function sendRequestAPI() {
     var text = $('#searching').val();
     $("#header").empty();
     $('ul').empty();
+    $('#footer').empty();
     callApi(text, defArr);
     $.when.apply(this, defArr).done(function() {
     if (res.length===0) {
@@ -111,7 +112,7 @@ function eventsFound () {
   setTimeout(function(){
       $('#header').append('<span class = "event-header">Here you go! Check out these events in Seattle. </span>');
       $("#loading").hide();
-      $('#footer').append('<span class="footer-container">© 2016, MIT LICENSE. All rights reserved.</span>');
+      $('#footer').append('<span>© 2016, MIT LICENSE. All rights reserved.</span>').addClass("footer-container");
       $('html, body').animate({
          scrollTop: $(".events-content").offset().top
         }, 1000);
