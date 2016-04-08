@@ -1,7 +1,7 @@
 html {
-	background: rgb(238,238,238);
-	font-family: 'Lato', sans-serif;
-	font-weight: 300;
+  background: rgb(238,238,238);
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
 }
 
 #background {
@@ -10,71 +10,24 @@ html {
     background-repeat: no-repeat;
     height: 100%;
 }
-/*header nav {
-  text-align: right;
-  color: white;
-  margin-right: 20px;
-  margin-top: 10px;
-}*/
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
 
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-}
-/*The modal About Button*/
-#myBtn {
-  background: transparent;
-  color: white;
-}
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-/**************************/
 #main-title {
-	font-size: 3.4rem;
-	font-family: 'Lato', sans-serif;
-	font-weight: 100;
-	color: white;
+  font-size: 3.4rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  color: white;
 }
 
 .main-content {
-	padding-top: 12%;
+  padding-top: 12%;
 }
 
 .search-zip {
-	padding-top: 20px;
-	width: 70%;
-	margin-left: 15%;
+  padding-top: 20px;
+  width: 70%;
+  margin-left: 15%;
   font-family: 'Lato', sans-serif;
-	font-weight: 300;
+  font-weight: 300;
 
 }
 
@@ -89,43 +42,43 @@ html {
 }
 
 .btn-container {
-	margin-top: 40px;
+  margin-top: 40px;
 }
 #show-events-btn {
-	background-color: transparent;
-	color: white;
-	border-radius: 4px;
-	border: 1px solid white;
-	font-size: 140%;
-	font-family: 'Lato', sans-serif;
-	font-weight: 300;
-	box-shadow: none;
+  background-color: transparent;
+  color: white;
+  border-radius: 4px;
+  border: 1px solid white;
+  font-size: 140%;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  box-shadow: none;
 }
 
 #show-events-btn:hover {
-	border: 2px solid white;
+  border: 2px solid white;
 }
 .pure-button:hover, .pure-button:focus {
    background-image: none;
   }
 
 #header {
-	text-align: center;
-	margin: 17px 0 17px 0;
+  text-align: center;
+  margin: 17px 0 17px 0;
 }
 .event-header {
-	font-family: 'Lato', sans-serif;
-	font-weight: 300;
-	font-size: 2rem;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
 }
 
 #loading {
-	display: none;
-	margin-top: 30px;
+  display: none;
+  margin-top: 30px;
 }
 
 [class*="block-grid-"].text-center > li {
-  
+
   margin: 0.25rem;
   float: none;
   display: inline-block;
@@ -148,7 +101,7 @@ html {
 
 
 [class*="block-grid-"] {
-	margin: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
 }
 .content {
   text-align: left;
@@ -190,18 +143,18 @@ li {
 }
 
 .row:before, .row.after{
-	display: none;
+  display: none;
 }
 
 #arrow {
-	width:60px;
-	display: none;
-	transform: rotate(-90deg);
-	cursor: pointer;
-	z-index: 10; 
-	position: fixed; 
-	right: 22px; 
-	top: 270px;
+  width:60px;
+  display: none;
+  transform: rotate(-90deg);
+  cursor: pointer;
+  z-index: 10;
+  position: fixed;
+  right: 22px;
+  top: 270px;
 }
 
 div .modal-header, .modal-body {
