@@ -1,14 +1,6 @@
   var fixed = false;
   var res;
-  $(document).ready(function() {
-     $("#searching").focus(function(){
-    $('#footer').hide();
-});
-
-$("#searching").blur(function(){
-    $('#footer').show();
-});
-  })
+  
   $(document).scroll(function() {
   var top = $('#background').outerHeight();
     if( $(this).scrollTop() > top) {
