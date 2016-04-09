@@ -17,9 +17,6 @@
     }
 })
 
-
-
-
 $(document).on("click", ".content", function(e) {
 
   var target = $(e.target).closest('.content');
