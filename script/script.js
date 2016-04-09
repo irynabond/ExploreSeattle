@@ -1,5 +1,14 @@
   var fixed = false;
   var res;
+  $(document).ready(function() {
+     $("#searching").focus(function(){
+    $('#footer').hide();
+});
+
+$("#searching").blur(function(){
+    $('#footer').show();
+});
+  })
   $(document).scroll(function() {
   var top = $('#background').outerHeight();
     if( $(this).scrollTop() > top) {
@@ -43,13 +52,7 @@ $(document).on("click", ".content", function(e) {
 
 
  function clickButton (event){
-  $("#searching").focus(function(){
-    $('#footer').hide();
-});
 
-$("#searching").blur(function(){
-    $('#footer').show();
-});
   if ($('#searching').val()==="") {
     ifInputEmptyPopup();
   } else {
