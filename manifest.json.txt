@@ -1,0 +1,7 @@
+{
+  // Required
+  "manifest_version": 2,
+  "name": "My Extension",
+  "version": "versionString",
+  "windowSoftInputMode": "adjustResize"
+  }
