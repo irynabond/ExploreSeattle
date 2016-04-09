@@ -18,7 +18,7 @@
 })
 
 $(document).on("click", ".content", function(e) {
-
+  
   var target = $(e.target).closest('.content');
   var title = target.find('.title');
 
@@ -43,6 +43,13 @@ $(document).on("click", ".content", function(e) {
 
 
  function clickButton (event){
+  $("#searching").focus(function(){
+    $('#footer').hide();
+});
+
+$("#searching").blur(function(){
+    $('#footer').show();
+});
   if ($('#searching').val()==="") {
     ifInputEmptyPopup();
   } else {

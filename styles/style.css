@@ -5,14 +5,6 @@ html {
   overflow: auto;
 }
 
-body {
-   /* height:auto;*/
-    overflow: auto;
-}
-.scrollable {
-    position:inherit;
-}
-
 #background {
     background-image: url('../images/seattle1.jpg');
     background-size: cover;
@@ -177,3 +169,4 @@ div .modal-header, .modal-body {
   color: rgb(113, 113, 120);
   margin: 20px 0 20px 0;
 }
+
