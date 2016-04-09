@@ -2,7 +2,7 @@ function callApi(text, defArr) {
   callEventful (text, defArr);
   callEventbrite(text, defArr);
   callMeetup(text, defArr);
-  
+
   function callEventful(text, defArr) {
     var deferred = $.Deferred();
     defArr.push(deferred);
@@ -87,7 +87,7 @@ function callApi(text, defArr) {
         }
     });
   }
-  
+
   function callEventbrite(text, defArr) {
     var deferred = $.Deferred();
     defArr.push(deferred);
@@ -131,9 +131,11 @@ function showEventfulData(obj) {
           '<p class = "data-details">' +  obj.fullDate + ", " + obj.time + '</p>' +
           '<p class = "details"> Address: </p>' +
           '<p class = "data-details">' + obj.address + ", " + obj.city + '</p>' +
+        '</div>' +
+        '<div>' +
           '<p class ="link"> Open on <a href=' + url+ '>' + company + '</a></p>' +
         '</div>' +
     '</li>');
     $('.content').data(obj.name, {event: obj.description });
- 
+
 }

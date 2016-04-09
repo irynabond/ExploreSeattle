@@ -106,7 +106,6 @@ html {
 .content {
   text-align: left;
   font-family: 'Varela Round', sans-serif;
-  text-align: left;
   padding: 25px 7px 7px 7px;
 }
 .content .title, .details {
@@ -135,7 +134,7 @@ p {
 li {
   position: relative;
 }
- .content .link {
+.link {
   font-size: 15px;
   position: absolute;
   bottom: 5px;
