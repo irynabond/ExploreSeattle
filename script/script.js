@@ -27,6 +27,8 @@ $(document).on("click", ".content", function(e) {
   if (descr===null||descr===undefined) {
     descr = "Sorry, there is no description for this event provided. To learn more, follow the event link and contact to organizer. Thank you.";
   }
+    e.preventDefault();
+
   bootbox.dialog({
         title: '<p class = "popup-title"><strong>' + title.text() + '</strong></p>',
         message: '<p class = "popup-desc">' +descr + '</p>',
