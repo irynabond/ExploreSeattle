@@ -1,4 +1,4 @@
-  var fixed = false;
+ var fixed = false;
   var res;
   
   $(document).scroll(function() {
