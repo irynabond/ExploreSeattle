@@ -45,17 +45,16 @@ $(document).on("click", ".content", function(e) {
 });
 
 
- function clickButton (e){
+ function clickButton (){
 
   if ($('#searching').val()==="") {
-    ifInputEmptyPopup(e);
+    ifInputEmptyPopup();
   } else {
-    sendRequestAPI(e);
+    sendRequestAPI();
   }
 }
 
-function ifInputEmptyPopup (e) {
-  e.preventDefault();
+function ifInputEmptyPopup () {
 
   bootbox.dialog({
         title: '<p class = "popup-title"><strong>Hello friend!</strong></p>',
@@ -72,7 +71,7 @@ function ifInputEmptyPopup (e) {
     });
 }
 
-function sendRequestAPI(e) {
+function sendRequestAPI() {
   res = [];
   var defArr = [];
   $("#loading").show();
@@ -83,7 +82,7 @@ function sendRequestAPI(e) {
     callApi(text, defArr);
     $.when.apply(this, defArr).done(function() {
     if (res.length===0) {
-       noEventsFoundPopup(e);
+       noEventsFoundPopup();
     } else {
       if (res.length!==0) {
         eventsFound();
@@ -92,8 +91,7 @@ function sendRequestAPI(e) {
   });
 }
 
-function noEventsFoundPopup (e) {
-   e.preventDefault();
+function noEventsFoundPopup () {
 
   $("#loading").hide();
   $('#searching').val("");
