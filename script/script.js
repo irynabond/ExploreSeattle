@@ -19,7 +19,8 @@
 })
 
 $(document).on("click", ".content", function(e) {
-  
+  e.preventDefault();
+
   var target = $(e.target).closest('.content');
   var title = target.find('.title');
 
@@ -27,7 +28,6 @@ $(document).on("click", ".content", function(e) {
   if (descr===null||descr===undefined) {
     descr = "Sorry, there is no description for this event provided. To learn more, follow the event link and contact to organizer. Thank you.";
   }
-    e.preventDefault();
 
   bootbox.dialog({
         title: '<p class = "popup-title"><strong>' + title.text() + '</strong></p>',
@@ -45,16 +45,18 @@ $(document).on("click", ".content", function(e) {
 });
 
 
- function clickButton (event){
+ function clickButton (e){
 
   if ($('#searching').val()==="") {
-    ifInputEmptyPopup();
+    ifInputEmptyPopup(e);
   } else {
-    sendRequestAPI();
+    sendRequestAPI(e);
   }
 }
 
-function ifInputEmptyPopup () {
+function ifInputEmptyPopup (e) {
+  e.preventDefault();
+
   bootbox.dialog({
         title: '<p class = "popup-title"><strong>Hello friend!</strong></p>',
         message: '<p class = "popup-desc">Use an input field to tell which type of event you\'d like to attend. For example: "dancing", "hiking", "music", "art", "learning" etc. Hope you\'ll enjoy the experience.</p>',
@@ -70,7 +72,7 @@ function ifInputEmptyPopup () {
     });
 }
 
-function sendRequestAPI() {
+function sendRequestAPI(e) {
   res = [];
   var defArr = [];
   $("#loading").show();
@@ -81,7 +83,7 @@ function sendRequestAPI() {
     callApi(text, defArr);
     $.when.apply(this, defArr).done(function() {
     if (res.length===0) {
-       noEventsFoundPopup();
+       noEventsFoundPopup(e);
     } else {
       if (res.length!==0) {
         eventsFound();
@@ -90,7 +92,9 @@ function sendRequestAPI() {
   });
 }
 
-function noEventsFoundPopup () {
+function noEventsFoundPopup (e) {
+   e.preventDefault();
+
   $("#loading").hide();
   $('#searching').val("");
   $("#searching").focus();
